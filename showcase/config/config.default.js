@@ -22,5 +22,17 @@ module.exports = appInfo => {
     },
   };
 
+
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+    // domainWhiteList: [ 'http://localhost:7001/' ],
+  };
+
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+  };
   return config;
 };

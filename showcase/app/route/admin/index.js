@@ -8,8 +8,10 @@ module.exports = app => {
     router,
     controller,
   } = app;
-  router.get('/', controller.home.index);
 
-  require('./route/admin')(app);
-  // require('./route/api')(app);
+
+  router.post('/login', controller.admin.login.index);
+  router.resources('users', '/api/users', controller.admin.users);
+
+
 };

@@ -4,19 +4,31 @@ module.exports = app => {
   const Schema = mongoose.Schema;
   const UserSchema = new Schema({
     userName: {
-      unique: true,
       type: String,
+      dropDups: true,
+      unique: true,
     },
     password: {
       type: String,
     },
-
-    padd: {
+    moblie: {
+      type: String,
+    },
+    email: {
+      type: String,
+    },
+    status: {
+      type: Number,
       default: 1,
     },
-
+    roleId: {
+      type: Schema.Types.ObjectId,
+    },
+    isSuper: {
+      type: Number,
+      default: 0,
+    },
   }, {
-    collection: 'users',
     versionKey: false,
     timestamps: {
       createdAt: true,
