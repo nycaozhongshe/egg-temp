@@ -11,6 +11,15 @@ class LoginController extends BaseController {
     const payload = ctx.request.body;
 
     // this.ctx.params;
+    const res = ctx.model.User.find({
+      userName: payload.userName,
+    });
+
+    console.log(res);
+
+    if (!res) {
+      ctx.throw(10001, '用户不存在');
+    }
 
 
     ctx.helper.success({
