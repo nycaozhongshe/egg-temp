@@ -11,7 +11,6 @@ exports.success = ({
   msg = '请求成功',
 }) => {
 
-  console.log(111);
 
   ctx.body = {
     code: 0,

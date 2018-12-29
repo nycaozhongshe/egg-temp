@@ -2,7 +2,15 @@
 module.exports = app => {
   const mongoose = app.mongoose;
   const Schema = mongoose.Schema;
+
+
+  const ObjectId = Schema.Types.ObjectId;
+
+  // console.log(Schema.Types.ObjectId());
+
   const UserSchema = new Schema({
+
+
     userName: {
       type: String,
       dropDups: true,
@@ -22,7 +30,7 @@ module.exports = app => {
       default: 1,
     },
     roleId: {
-      type: Schema.Types.ObjectId,
+      type: ObjectId,
     },
     isSuper: {
       type: Number,
